@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nicco.composelabnicco">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ComposeLabNicco">
+        <activity android:name=".tutorial1.Tutorial1Activity"/>
+        <activity android:name=".tutorial2.Tutorial2Activity"/>
+        <activity android:name=".tutorial3.Tutorial3Activity"/>
+        <activity android:name=".tutorial4.Tutorial4Activity"/>
+        <activity android:name=".tutorial5.Tutorial5Activity"/>
+        <activity android:name=".tutorial6.Tutorial6Activity"/>
+        <activity android:name=".tutorial7.Tutorial7Activity"/>
+        <activity android:name=".tutorial8.Tutorial8Activity"/>
+        <activity android:name=".tutorial9.Tutorial9Activity"/>
+        <activity android:name=".tutorial10.Tutorial10Activity"/>
+        <activity android:name=".tutorial11.Tutorial11Activity"/>
+        <activity android:name=".tutorial12.Tutorial12Activity"/>
+        <activity
+            android:name=".main.NavigationSampleActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ComposeLabNicco.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

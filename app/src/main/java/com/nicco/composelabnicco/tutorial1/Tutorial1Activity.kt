@@ -14,12 +14,17 @@ class Tutorial1Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeLabNiccoTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                }
-            }
+            Tutorial1View()
+        }
+    }
+}
+
+@Composable
+fun Tutorial1View(){
+    ComposeLabNiccoTheme {
+        // A surface container using the 'background' color from the theme
+        Surface(color = MaterialTheme.colors.background) {
+            Greeting("Android")
         }
     }
 }

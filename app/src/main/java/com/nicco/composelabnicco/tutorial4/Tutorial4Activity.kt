@@ -27,22 +27,27 @@ class Tutorial4Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val painter = painterResource(id = R.drawable.dbz_goku)
-            val contentDescription = "Goku flying in a cloud"
-            val title = "Goku flying"
-
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth(0.5f)
-                    .padding(16.dp)
-            ) {
-                CardExample(
-                    painter = painter,
-                    contentDescription = contentDescription,
-                    title = title
-                )
-            }
+            Tutorial4View()
         }
+    }
+}
+
+@Composable
+fun Tutorial4View(){
+    val painter = painterResource(id = R.drawable.dbz_goku)
+    val contentDescription = "Goku flying in a cloud"
+    val title = "Goku flying"
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth(0.5f)
+            .padding(16.dp)
+    ) {
+        CardExample(
+            painter = painter,
+            contentDescription = contentDescription,
+            title = title
+        )
     }
 }
 

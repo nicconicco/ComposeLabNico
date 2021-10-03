@@ -27,49 +27,54 @@ class Tutorial5Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val fontFamily = FontFamily(
-                Font(R.font.roboto_light, FontWeight.Light),
-                Font(R.font.roboto_medium, FontWeight.Medium),
-                Font(R.font.roboto_bold, FontWeight.Bold),
-                Font(R.font.roboto_regular, FontWeight.Normal),
-            )
-            Box(
-                modifier =
-                Modifier
-                    .fillMaxSize()
-                    .background(Color(0xFF101010))
-            ) {
-                Text(
-                    text = buildAnnotatedString {
-                        withStyle(
-                            style = SpanStyle(
-                                color = Color.Green,
-                                fontSize = 50.sp
-                            )
-                        ) {
-                            append("J")
-                        }
-                        append("etpack ")
-                        withStyle(
-                            style = SpanStyle(
-                                color = Color.Green,
-                                fontSize = 50.sp
-                            )
-                        ) {
-                            append("C")
-                        }
-                        append("ompose")
-                    },
-                    color = Color.White,
-                    fontSize = 30.sp,
-                    fontFamily = fontFamily,
-                    fontWeight = FontWeight.Bold,
-                    fontStyle = FontStyle.Normal,
-                    textAlign = TextAlign.Center,
-                    textDecoration = TextDecoration.Underline
-                )
-            }
+            Tutorial5View()
         }
+    }
+}
+
+@Composable
+fun Tutorial5View(){
+    val fontFamily = FontFamily(
+        Font(R.font.roboto_light, FontWeight.Light),
+        Font(R.font.roboto_medium, FontWeight.Medium),
+        Font(R.font.roboto_bold, FontWeight.Bold),
+        Font(R.font.roboto_regular, FontWeight.Normal),
+    )
+    Box(
+        modifier =
+        Modifier
+            .fillMaxSize()
+            .background(Color(0xFF101010))
+    ) {
+        Text(
+            text = buildAnnotatedString {
+                withStyle(
+                    style = SpanStyle(
+                        color = Color.Green,
+                        fontSize = 50.sp
+                    )
+                ) {
+                    append("J")
+                }
+                append("etpack ")
+                withStyle(
+                    style = SpanStyle(
+                        color = Color.Green,
+                        fontSize = 50.sp
+                    )
+                ) {
+                    append("C")
+                }
+                append("ompose")
+            },
+            color = Color.White,
+            fontSize = 30.sp,
+            fontFamily = fontFamily,
+            fontWeight = FontWeight.Bold,
+            fontStyle = FontStyle.Normal,
+            textAlign = TextAlign.Center,
+            textDecoration = TextDecoration.Underline
+        )
     }
 }
 

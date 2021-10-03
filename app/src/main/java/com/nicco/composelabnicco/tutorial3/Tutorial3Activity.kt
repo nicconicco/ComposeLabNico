@@ -1,12 +1,10 @@
 package com.nicco.composelabnicco.tutorial3
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -19,13 +17,13 @@ class Tutorial3Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            PropertiesCompose()
+            Tutorial3View()
         }
     }
 }
 
 @Composable
-fun PropertiesCompose() {
+fun Tutorial3View() {
     Column(
         modifier = Modifier
             .background(Color.Green)
@@ -65,5 +63,5 @@ fun PropertiesCompose() {
 )
 @Composable
 fun DefaultPreview() {
-    PropertiesCompose()
+    Tutorial3View()
 }

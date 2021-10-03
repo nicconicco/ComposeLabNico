@@ -4,19 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
-import androidx.compose.foundation.indication
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nicco.composelabnicco.ui.theme.ComposeLabNiccoTheme
@@ -30,9 +24,8 @@ class Tutorial2Activity : ComponentActivity() {
 //        collunText()
 //        rowText()
 //            collunPropertiesText()
-            rowPropertiesText()
+            Tutorial2View()
         }
-
     }
 }
 
@@ -96,11 +89,11 @@ fun rowText() {
 }
 
 @Composable
-fun rowPropertiesText() {
+fun Tutorial2View() {
     Row(
         modifier = Modifier
-                // sometimes preview not work well with this properties
-                // so you need to run in a emulator or device to show how works real
+            // sometimes preview not work well with this properties
+            // so you need to run in a emulator or device to show how works real
 //            .fillMaxSize(0.5f)
 //            .fillMaxSize()
             .fillMaxHeight(0.7f)
@@ -131,6 +124,6 @@ fun DefaultPreview() {
 //        collunText()
 //        rowText()
 //        collunPropertiesText()
-        rowPropertiesText()
+        Tutorial2View()
     }
 }

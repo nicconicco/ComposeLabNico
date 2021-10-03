@@ -20,29 +20,33 @@ class Tutorial6Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Column(
-                Modifier.fillMaxSize()
-            ) {
-                val color = remember {
-                    mutableStateOf(Color.Yellow)
-                }
+            Tutorial6View()
+        }
+    }
+}
 
-                ColorBox(
-                    Modifier
-                        .fillMaxSize()
-                        .weight(1f)
-                ) {
-                    color.value = it
-                }
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .weight(1f)
-                        .background(color.value)
-                ) {
+@Composable
+fun Tutorial6View(){
+    Column(
+        Modifier.fillMaxSize()
+    ) {
+        val color = remember {
+            mutableStateOf(Color.Yellow)
+        }
 
-                }
-            }
+        ColorBox(
+            Modifier
+                .fillMaxSize()
+                .weight(1f)
+        ) {
+            color.value = it
+        }
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .weight(1f)
+                .background(color.value)
+        ) {
 
         }
     }

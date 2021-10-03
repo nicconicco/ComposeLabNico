@@ -20,46 +20,46 @@ class Tutorial9Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val constraints = ConstraintSet {
-                val greenBox = createRefFor("greenBox")
-                val redBox = createRefFor("redBox")
-
-                constrain(greenBox) {
-                    top.linkTo(parent.top)
-                    start.linkTo(parent.start)
-                    width = Dimension.value(100.dp)
-                    height = Dimension.value(100.dp)
-                }
-
-                constrain(redBox) {
-                    top.linkTo(parent.top)
-                    start.linkTo(greenBox.end)
-                    end.linkTo(parent.end)
-                    width = Dimension.fillToConstraints
-                    height = Dimension.value(100.dp)
-                }
-            }
-
-            ConstraintLayout(constraints, modifier = Modifier.fillMaxSize()) {
-                Box(
-                    modifier = Modifier
-                        .background(Color.Green)
-                        .layoutId("greenBox")
-                )
-                Box(
-                    modifier = Modifier
-                        .background(Color.Red)
-                        .layoutId("redBox")
-                )
-            }
+            Tutorial9View()
         }
     }
 }
 
 @Composable
-fun FunctionExample(
+fun Tutorial9View(
 ) {
+    val constraints = ConstraintSet {
+        val greenBox = createRefFor("greenBox")
+        val redBox = createRefFor("redBox")
 
+        constrain(greenBox) {
+            top.linkTo(parent.top)
+            start.linkTo(parent.start)
+            width = Dimension.value(100.dp)
+            height = Dimension.value(100.dp)
+        }
+
+        constrain(redBox) {
+            top.linkTo(parent.top)
+            start.linkTo(greenBox.end)
+            end.linkTo(parent.end)
+            width = Dimension.fillToConstraints
+            height = Dimension.value(100.dp)
+        }
+    }
+
+    ConstraintLayout(constraints, modifier = Modifier.fillMaxSize()) {
+        Box(
+            modifier = Modifier
+                .background(Color.Green)
+                .layoutId("greenBox")
+        )
+        Box(
+            modifier = Modifier
+                .background(Color.Red)
+                .layoutId("redBox")
+        )
+    }
 }
 
 @Preview(

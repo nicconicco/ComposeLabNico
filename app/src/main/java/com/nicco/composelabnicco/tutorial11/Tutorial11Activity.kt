@@ -23,61 +23,61 @@ class Tutorial11Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            var sizeState by remember { mutableStateOf(200.dp) }
-            val size by animateDpAsState(
-                targetValue = sizeState,
-                //type of animation
+            Tutorial11View()
+        }
+    }
+}
+
+@Composable
+fun Tutorial11View(
+) {
+    var sizeState by remember { mutableStateOf(200.dp) }
+    val size by animateDpAsState(
+        targetValue = sizeState,
+        //type of animation
 //                tween(
 //                    durationMillis = 3000,
 //                    delayMillis = 300,
 //                    easing = LinearOutSlowInEasing
 //                )
-                //another type of animation
+        //another type of animation
 //                spring(
 //                    Spring.DampingRatioHighBouncy
 //                )
-                //another one
+        //another one
 //                keyframes {
 //                    durationMillis = 5000
 //                    sizeState at 0 with LinearEasing
 //                    sizeState * 1.5f at 100 with FastOutLinearInEasing
 //                    sizeState * 2f at 5000
 //                }
-                tween(
-                    durationMillis = 1000
-                )
-            )
+        tween(
+            durationMillis = 1000
+        )
+    )
 
-            val infinityTransition = rememberInfiniteTransition()
-            val color by infinityTransition.animateColor(
-                initialValue = Color.Red,
-                targetValue = Color.Green,
-                animationSpec = infiniteRepeatable(
-                    tween(durationMillis = 2000),
-                    repeatMode = RepeatMode.Reverse
-                )
-            )
+    val infinityTransition = rememberInfiniteTransition()
+    val color by infinityTransition.animateColor(
+        initialValue = Color.Red,
+        targetValue = Color.Green,
+        animationSpec = infiniteRepeatable(
+            tween(durationMillis = 2000),
+            repeatMode = RepeatMode.Reverse
+        )
+    )
 
-            Box(
-                modifier = Modifier
-                    .size(size)
-                    .background(color),
-                contentAlignment = Alignment.Center
-            ) {
-                Button(onClick = {
-                    sizeState += 50.dp
-                }) {
-                    Text("Increase Size")
-                }
-            }
+    Box(
+        modifier = Modifier
+            .size(size)
+            .background(color),
+        contentAlignment = Alignment.Center
+    ) {
+        Button(onClick = {
+            sizeState += 50.dp
+        }) {
+            Text("Increase Size")
         }
     }
-}
-
-@Composable
-fun FunctionExample(
-) {
-
 }
 
 @Preview(
